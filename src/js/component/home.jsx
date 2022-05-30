@@ -28,15 +28,15 @@ const Home = () => {
 			<div id="semaforo" className="bg-dark d-flex-column m-auto">
 				<div
 					id="verde"
-					className={"rounded-circle m-auto " + color}
+					className={"rounded-circle bg-success m-auto " + color}
 					onClick={cambiaColor}></div>
 				<div
 					id="naranja"
-					className={"rounded-circle m-auto " + color2}
+					className={"rounded-circle bg-warning m-auto " + color2}
 					onClick={cambiaColor2}></div>
 				<div
 					id="rojo"
-					className={"rounded-circle m-auto " + color3}
+					className={"rounded-circle bg-danger m-auto " + color3}
 					onClick={cambiaColor3}></div>
 			</div>
 		</>
