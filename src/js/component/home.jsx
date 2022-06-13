@@ -55,7 +55,7 @@ const Home = () => {
 	return (
 		<>
 			<div>
-				<h1 className="text-center mt-5">Semaforo!</h1>
+				<h1 className="text-center mt-5 text-warning">Semaforo!</h1>
 			</div>
 
 			<div
