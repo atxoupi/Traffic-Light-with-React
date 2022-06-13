@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
 	const [color, setColor] = useState("");
 	const [color2, setColor2] = useState("");
 	const [color3, setColor3] = useState("");
+	const [color4, setColor4] = useState("");
+	const [morado, setMorado] = useState("");
 
 	function cambiaColor() {
 		color === "" ? setColor("ilumina") : setColor("");
@@ -26,6 +27,7 @@ const Home = () => {
 		setColor("");
 		setColor2("");
 	}
+
 	function aleatorio() {
 		if ((color === "") & (color2 === "") & (color3 === "")) {
 			setColor("ilumina");
@@ -40,12 +42,22 @@ const Home = () => {
 			setColor("ilumina");
 		}
 	}
+	function handleMorado() {
+		if (morado === "") {
+			setMorado(
+				<div
+					id="morado"
+					className={"rounded-circle m-auto p-2 ilumina"}></div>
+			);
+		} else setMorado("");
+	}
 
 	return (
 		<>
 			<div>
 				<h1 className="text-center mt-5">Semaforo!</h1>
 			</div>
+
 			<div
 				id="semaforo"
 				className="bg-dark d-flex-column m-auto p-2 rounded-3">
@@ -61,13 +73,20 @@ const Home = () => {
 					id="rojo"
 					className={"rounded-circle bg-danger m-auto p-2 " + color3}
 					onClick={cambiaColor3}></div>
+				{morado}
 			</div>
-			<div>
+			<div className="d-flex justify-content-center m-2">
 				<button
 					type="button"
-					onClick={aleatorio}
-					class="btn btn-outline-success">
+					className="btn btn-success m-2"
+					onClick={aleatorio}>
 					Switch
+				</button>
+				<button
+					type="button"
+					className="btn btn-warning m-2"
+					onClick={handleMorado}>
+					Morado
 				</button>
 			</div>
 		</>
